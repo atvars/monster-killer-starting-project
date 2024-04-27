@@ -1,3 +1,4 @@
+// global variables
 const ATTACK_VALUE = 10;
 const STRONG_ATTACK_VALUE = 17;
 const MONSTER_ATTACK_VALUE = 14;
@@ -7,8 +8,10 @@ let choosenMaxLife = 100;
 let currentMonsterHealth = choosenMaxLife;
 let currentPlayerHealth = choosenMaxLife;
 
+// set health bars
 adjustHealthBars(choosenMaxLife);
 
+// check if anyone lost or its a draw after each attack
 function endRound() {
   const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
   currentPlayerHealth -= playerDamage;
@@ -20,6 +23,7 @@ function endRound() {
     alert('Its a Draw!');
   }
 }
+
 
 function attackMonster(mode) {
   let maxDamage;
