@@ -87,7 +87,7 @@ function endRound() {
     currentPlayerHealth
   );
 
-  // if player lost and has bonus life reset his health and remove bonus life
+  // if player lost and has bonus life reset his health and remove bonus life indicator
   if (currentPlayerHealth <= 0 && hasBonusLife) {
     hasBonusLife = false;
     removeBonusLife(); // from vendor file
