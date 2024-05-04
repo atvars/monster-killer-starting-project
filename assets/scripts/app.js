@@ -4,7 +4,19 @@ const STRONG_ATTACK_VALUE = 17;
 const MONSTER_ATTACK_VALUE = 14;
 const HEAL_VALUE = 10;
 
-let choosenMaxLife = 100;
+// ask user to enter max life
+const enteredValue = prompt(
+  'Please set maximum life for you and the monster',
+  '100'
+);
+
+// parsing entered string value to nr
+let choosenMaxLife = parseInt(enteredValue);
+// check if user not entered number or entered 0 or negative nr
+if (isNaN(choosenMaxLife) || choosenMaxLife <= 0) {
+  choosenMaxLife = 100;
+}
+
 let currentMonsterHealth = choosenMaxLife;
 let currentPlayerHealth = choosenMaxLife;
 let hasBonusLife = true;
@@ -14,9 +26,9 @@ adjustHealthBars(choosenMaxLife); // from vendor file
 
 // reset after loss
 function reset() {
-   currentMonsterHealth = choosenMaxLife;
-    currentPlayerHealth = choosenMaxLife;
-    resetGame(choosenMaxLife)
+  currentMonsterHealth = choosenMaxLife;
+  currentPlayerHealth = choosenMaxLife;
+  resetGame(choosenMaxLife);
 }
 
 // check if anyone lost or its a draw after each attack
